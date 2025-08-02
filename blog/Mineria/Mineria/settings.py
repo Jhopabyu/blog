@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,6 +37,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'manage_post.apps.ManagePostConfig',
     'user.apps.UserConfig',
     'ckeditor',
+    'cloudinary',
     'django_cleanup.apps.CleanupConfig',
 ]
 
@@ -64,7 +68,10 @@ ROOT_URLCONF = 'Mineria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                    os.path.join(BASE_DIR, 'manage_post', 'templates'),
+                    os.path.join(BASE_DIR, 'user', 'templates'),           
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

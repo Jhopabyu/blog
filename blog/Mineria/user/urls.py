@@ -5,7 +5,7 @@ from django.contrib.auth.views import LogoutView, PasswordResetView,PasswordChan
 
 urlpatterns = [
     path('login/', views.LoginView.as_view(), name='login'),
-path('register/', views.SignUpView.as_view(), name='register'),
+    path('add/', views.SignUpView.as_view(), name='register'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('edit/', views.UserUpdateView.as_view(), name='edit_user'),
     path('delete/', views.UserDeleteView.as_view(), name='delete_user'),

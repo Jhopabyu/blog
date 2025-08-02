@@ -32,9 +32,11 @@ class LoginView(LoginView):
     form_class = LoginForm
     template_name = 'login/login.html'
         
-class UserUpdateView(LoginRequiredMixin, CreateView):
+class UserUpdateView(LoginRequiredMixin, TemplateView):
+    #Retornar al login si no esta autenticado
     login_url = 'login'
     user_form = UserForm
+    #Formularios
     profile_form = ProfileForm
     
     def post(self, request):

@@ -4,28 +4,50 @@
 {% block title %}Proyectos por Provincia{% endblock %}
 
 {% block extra_css %}
-  <link rel="stylesheet" href="{% static 'manage_post/css/leaflet_custom.css' %}" />
+<link rel="stylesheet" href="{% static 'manage_post/css/leaflet_custom.css' %}" />
 {% endblock %}
 
 {% block content %}
-  <h2>Seleccione una Provincia</h2>
-  <select id="provincia-select">
-      <option value="">-- Seleccione --</option>
-  </select>
+<div class="container my-4">
+  <h2 class="mb-4 text-center">Seleccione una Provincia</h2>
 
-  <div id="proyectos-list"></div>
-  
-  <div class="map-container">
-    <div id="map"></div>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <select id="provincia-select" class="form-select">
+        <option value="">-- Seleccione --</option>
+      </select>
+    </div>
   </div>
-  <!--PARA CREAR EL PROYECTO-->
-  {% if request.user.is_staff %}
-  <a href="{% url 'crear_proyecto' %}" class="btn btn-success">Crear Proyecto</a>
-  {% endif %}
 
+  <div class="row gy-4">
+    <div class="col-md-4">     <h4>Lista de Proyectos</h4>
+      <div id="proyectos-items" class="shadow-sm"></div>
+    </div>
+
+    <div class="col-md-5">
+      <h4>Detalle del Proyecto</h4>
+      <div id="detalle-container">
+        <div id="detalle-proyecto"></div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <h4>Mapa</h4>
+      <div id="map"></div>
+    </div>
+  </div>
+
+  {% if request.user.is_staff %}
+  <div class="mt-4 text-center">
+    <a href="{% url 'crear_proyecto' %}" class="btn btn-success btn-lg shadow-sm">
+      <i class="bi bi-plus-circle"></i> Crear Proyecto
+    </a>
+  </div>
+  {% endif %}
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="{% static 'manage_post/js/proyectos_map.js' %}"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="{% static 'manage_post/js/proyectos_map.js' %}"></script>
 {% endblock %}

@@ -4,8 +4,9 @@ from django.http import HttpResponse
 # Create your models here.
 class Proyecto(models.Model):
     nombre = models.CharField(max_length=255)
-    estado = models.CharField(max_length=100)
+    estado = models.CharField(max_length=10)
     pais = models.CharField(max_length=100)
+    provincia = models.CharField(max_length=100, null=True, blank=True)
     costo = models.DecimalField(max_digits=12, decimal_places=2)
     equipo = models.TextField(max_length=300)
     f_aprobacion = models.DateField()

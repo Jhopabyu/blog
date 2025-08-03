@@ -3,6 +3,12 @@
 
 <header class="header">
     <div class="menu">
+        <!---->
+        <div>
+            <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         <div class="logo">
             <!--Logo-->
             <a href="{% url 'index' %}"><img src="{% static 'base/image/Logo/abc_company.png' %}" alt="Logo"></a>
@@ -37,11 +43,11 @@
                 <!-- Botón de salir -->
                 <li>
                     <form method="POST" action="{% url 'logout' %}" style="display: inline;">
-        {% csrf_token %}
-        <button type="submit" class="loguot" style="background: none; border: none; color: #fff; cursor: pointer; padding: 0;">
-            Salir
-        </button>
-    </form>
+                    {% csrf_token %}
+                        <button type="submit" class="loguot" style="background: none; border: none; color: black; cursor: pointer; padding: 0;">
+                            Salir
+                        </button>
+                    </form>
                 </li>
             </ul>
             {% else %}
@@ -63,4 +69,60 @@
             {% endif %}
         </nav>
     </div>
+<!--        -->
+<div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasMenuLabel">{{ _('Menú') }}</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex">
+    <!-- Menú izquierdo -->
+    <div class="w-50 pe-3 border-end">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="mostrarSubmenu('equipo')">{{ _('Sobre Nosotros') }}</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">{{ _('Servicios') }}</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="mostrarSubmenu('que')">{{ _('Qué Hacemos') }}</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">{{ _('Contáctanos') }}</a></li>
+      </ul>
+    </div>
+    <!-- Menú derecho -->
+    <div class="w-50 ps-3" id="submenuContent">
+      <p>{{ _('Selecciona una opción del menú') }}</p>
+    </div>
+  </div>
+</div>
+
+<!--para el menu hamburguesa-->
+<script>
+  const urlProyectos = "{% url 'proyectos' %}";
+  const textoSobreNosotros = "{{ _('Sobre Nosotros') }}";
+  const textoQuienesSomos = "{{ _('Quiénes Somos') }}";
+  const textoOrganizacion = "{{ _('Organizacion') }}";
+  const textoProyectos = "{{ _('Proyectos') }}";
+  const textoProyectosDeDesarrollo = "{{ _('Proyectos de Desarrollo') }}";
+
+  function mostrarSubmenu(opcion) {
+    let contenido = '';
+    if (opcion === 'equipo') {
+      contenido = `
+        <h6>${textoSobreNosotros}</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">${textoQuienesSomos}</a></li>
+          <li><a href="#" class="text-white">${textoOrganizacion}</a></li>
+        </ul>`;
+    }
+    if (opcion === 'que') {
+      contenido = `
+        <h6>${textoProyectosDeDesarrollo}</h6>
+        <ul class="list-unstyled">
+          <li><a href="${urlProyectos}" class="text-white">${textoProyectos}</a></li>
+        </ul>`;
+    }
+    document.getElementById('submenuContent').innerHTML = contenido;
+  }
+</script>
+
+
+
+
 </header>

@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin
 from manage_post.models import Article, Category
 from manage_post.forms import CommentForm
+from django.http import JsonResponse
 from django.contrib.auth import get_user_model
 User = get_user_model()
 # Create your views here.
@@ -64,3 +65,4 @@ class ShowPostDetailView(DetailView, FormMixin):
         return super().form_valid(form)    
     def get_success_url(self):
         return reverse_lazy('post', kwargs={'slug': self.kwargs['slug']})
+

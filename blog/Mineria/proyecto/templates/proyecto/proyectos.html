@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Proyectos por Provincia{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'manage_post/css/leaflet_custom.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <h2>Seleccione una Provincia</h2>
+  <select id="provincia-select">
+      <option value="">-- Seleccione --</option>
+  </select>
+
+  <div id="proyectos-list"></div>
+  
+  <div class="map-container">
+    <div id="map"></div>
+  </div>
+  <!--PARA CREAR EL PROYECTO-->
+  {% if request.user.is_staff %}
+  <a href="{% url 'crear_proyecto' %}" class="btn btn-success">Crear Proyecto</a>
+  {% endif %}
+
+{% endblock %}
+
+{% block extra_scripts %}
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="{% static 'manage_post/js/proyectos_map.js' %}"></script>
+{% endblock %}

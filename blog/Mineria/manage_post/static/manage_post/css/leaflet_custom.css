@@ -1,0 +1,15 @@
+@import url("https://unpkg.com/leaflet/dist/leaflet.css");
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* Ajusta la altura según sea necesario */
+}
+
+#map {
+  /* Estilos para el mapa, como tamaño, etc. */
+  width: 600px;
+  height: 400px;
+  background-color: lightblue; /* Solo para visualizar */
+}

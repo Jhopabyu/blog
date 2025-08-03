@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'manage_post.apps.ManagePostConfig',
     'user.apps.UserConfig',
+    'proyecto.apps.ProyectoConfig',
     'ckeditor',
     'cloudinary',
     'django_cleanup.apps.CleanupConfig',
@@ -70,7 +71,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
                     os.path.join(BASE_DIR, 'manage_post', 'templates'),
-                    os.path.join(BASE_DIR, 'user', 'templates'),           
+                    os.path.join(BASE_DIR, 'user', 'templates'),
+                    os.path.join(BASE_DIR, 'proyecto', 'templates'),           
             ],
         'APP_DIRS': True,
         'OPTIONS': {

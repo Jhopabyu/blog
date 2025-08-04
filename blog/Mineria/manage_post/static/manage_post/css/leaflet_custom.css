@@ -42,3 +42,71 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+/*para el btotn de whatsapp y mail*/
+  .btn-whatsapp, .btn-contacto {
+    position: fixed;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    line-height: 50px;
+    z-index: 9999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-whatsapp {
+    background-color: #25d366;
+    right: 20px;
+  }
+
+  .btn-contacto {
+    background-color: #007bff;
+    right: 80px;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #1ebe57;
+    transform: scale(1.2);
+  }
+
+  .btn-contacto:hover {
+    background-color: #0056b3;
+    transform: scale(1.2);
+  }
+
+  /*para el btotn de whatsapp y mail el mensaje*/
+
+.btn-whatsapp span.tooltip-text,
+.btn-contacto span.tooltip-text  {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 10000;
+  bottom: 60px;
+  left: auto;
+  right: 0;
+  transform: none;
+  opacity: 0;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.btn-whatsapp:hover .tooltip-text,
+.btn-contacto:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

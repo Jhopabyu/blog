@@ -21,8 +21,8 @@ class Profile(models.Model):
 def email(sender, instance, created, **kwargs):
     if created:
         send_mail(
-            'Bienvenido a ABC BLOG',
-            str('Hola ' + instance.full_name + ', usted se ha registrado satisfactoriamente en el blog.' 
+            'Bienvenido a Servicios Mineria',
+            str('Hola ' + instance.full_name + ', usted se ha registrado satisfactoriamente en esta pagina. ' 
                                                '¡Es un placer que seas parte de nuestra familia!'),
             config('EMAIL_HOST_USER'),
             [instance.email]

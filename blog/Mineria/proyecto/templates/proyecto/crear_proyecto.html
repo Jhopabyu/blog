@@ -1,17 +1,23 @@
 {% extends 'base/base.html' %}
 
+{% load static  %}
+{% block css %}
+<link href="{% static 'proyecto/css/style_user.css' %}" rel="stylesheet" type="text/css">
+{% endblock css%}
+
 {% block title %}Crear Proyecto{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2>Nuevo Proyecto</h2>
+<div class="form-content">
+    
 
-    <form method="post">
+    <form method="post" class="form-general">
+        <h2>Nuevo Proyecto</h2>
         {% csrf_token %}
         {{ form.as_p }}
 
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{% url 'proyectos' %}" class="btn btn-secondary">Cancelar</a>
+        <a href="{% url 'proyectos' %}" class="btn-submit">Cancelar</a>
     </form>
 </div>
 {% endblock %}

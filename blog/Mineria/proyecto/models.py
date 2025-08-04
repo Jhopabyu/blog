@@ -2,9 +2,16 @@ from django.db import models
 from django.http import HttpResponse
 
 # Create your models here.
+
+ESTADOS = [
+        ('plan', 'Planificado'),
+        ('ejec', 'En ejecución'),
+        ('fin', 'Finalizado'),
+    ]
+
 class Proyecto(models.Model):
     nombre = models.CharField(max_length=255)
-    estado = models.CharField(max_length=10)
+    estado = models.CharField(max_length=15,choices=ESTADOS, default='plan')
     pais = models.CharField(max_length=100)
     provincia = models.CharField(max_length=100, null=True, blank=True)
     costo = models.DecimalField(max_digits=12, decimal_places=2)

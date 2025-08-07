@@ -1,0 +1,21 @@
+{% load static  %}
+{% block css %}
+<link href="{% static 'proyecto/css/style_user.css' %}" rel="stylesheet" type="text/css">
+{% endblock css%}
+
+{% block title %}Crear Directivo{% endblock %}
+
+{% block content %}
+<div class="form-content">
+    
+
+    <form method="post" class="form-general">
+        <h2>Nuevo Directivo</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'organizacion' %}" class="btn-submit">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

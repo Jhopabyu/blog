@@ -96,6 +96,7 @@
 
 <!--para el menu hamburguesa-->
 <script>
+  const urlOrganizacion="{% url 'organizacion'%}"
   const urlProyectos = "{% url 'proyectos' %}";
   const textoSobreNosotros = "{{ _('Sobre Nosotros') }}";
   const textoQuienesSomos = "{{ _('Quiénes Somos') }}";
@@ -110,7 +111,7 @@
         <h6>${textoSobreNosotros}</h6>
         <ul class="list-unstyled">
           <li><a href="#" class="text-white">${textoQuienesSomos}</a></li>
-          <li><a href="#" class="text-white">${textoOrganizacion}</a></li>
+          <li><a href="${urlOrganizacion}" class="text-white">${textoOrganizacion}</a></li>
         </ul>`;
     }
     if (opcion === 'que') {

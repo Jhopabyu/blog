@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'proyecto.apps.ProyectoConfig',
     'servicios.apps.ServiciosConfig',
+    'organizacion.apps.OrganizacionConfig',
     'ckeditor',
     'cloudinary',
     'django_cleanup.apps.CleanupConfig',

@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}{{ _('Servicios') }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'servicio/css/style_servicios.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="container my-5">
+
+    {% if presidente %}
+    <!-- PRESIDENTE -->
+    <div class="card mb-5 shadow-lg">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-4">
+                <img src="{{ presidente.foto.url }}" class="img-fluid rounded-start" alt="{{ presidente.nombre }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="card-title">{{ presidente.nombre }}</h2>
+                    <h5 class="text-muted">{{ presidente.cargo }}</h5>
+                    <p class="card-text mt-3">
+                        {{ presidente.descripcion|default:"Nuestro presidente lidera con visión estratégica y compromiso con el desarrollo sostenible." }}
+                    </p>
+                    <a href="" class="btn btn-primary mt-2">
+                        Ver biografía
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- DIRECTIVOS -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for directivo in directivos %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ directivo.foto.url }}" class="card-img-top" alt="{{ directivo.nombre }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ directivo.nombre }}</h5>
+                    <p class="card-text text-muted">{{ directivo.cargo }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="" class="btn btn-outline-primary btn-sm">
+                        Ver biografía
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+    {% if request.user.is_staff %}
+  <div class="mt-4 text-center">
+    <a href="{% url 'crear_organizacion' %}" class="btn btn-success btn-lg shadow-sm">
+      <i class="bi bi-plus-circle"></i> Crear Directivo
+    </a>
+  </div>
+  {% endif %}
+
+{% endblock %}

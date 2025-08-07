@@ -1,0 +1,38 @@
+.directivos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.directivo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.directivo img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.directivo .info {
+  margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .directivo {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .directivo img {
+    margin-right: 20px;
+  }
+
+  .directivo .info {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,20 @@
+#btnSubir {
+ position: fixed;
+  bottom: 100px; /* ajusta la distancia desde abajo */
+  right: 20px;   /* ajusta la distancia desde el lado derecho */
+  z-index: 999;
+  display: none;
+  background-color: #0d6efd; /* azul Bootstrap */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+}
+
+#btnSubir:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.1);
+}

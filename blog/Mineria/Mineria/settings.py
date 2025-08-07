@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'manage_post.apps.ManagePostConfig',
     'user.apps.UserConfig',
     'proyecto.apps.ProyectoConfig',
+    'servicios.apps.ServiciosConfig',
     'ckeditor',
     'cloudinary',
     'django_cleanup.apps.CleanupConfig',
@@ -149,13 +150,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIR = [
-    'manage_post/static',
-    'user/static',
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    BASE_DIR / 'manage_post' / 'static',
+    BASE_DIR / 'user' / 'static',
 ]
 
+
 #Ubicación de los archivos estáticos
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles' 
 
 #Url publica para los archivos media
 MEDIA_URL = '/media/'
@@ -169,7 +172,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = 'index'
 #Configurar EMAIL
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

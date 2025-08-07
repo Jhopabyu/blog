@@ -1,0 +1,348 @@
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  color: white;
+  overflow: hidden;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* oscuro transparente */
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .icon-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.hero .icon-box:hover {
+  transform: translateY(-10px);
+}
+
+.hero .icon-box .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #ffc107 !important;
+}
+
+.hero .btn-get-started {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #ffc107;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.hero .btn-get-started:hover {
+  background: #ff9800;
+  color: #fff;
+}
+.hero .icon-box h4.title a {
+  color: rgb(187, 194, 243); /* o el color que prefieras */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.hero .icon-box h4.title a:hover {
+  color: #ffc107; /* o el color que prefieras al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* Asegura que todas las filas se comporten igual con flex */
+.hero .row.gy-4 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Asegura que todas las tarjetas tengan la misma altura */
+.hero .icon-box {
+  flex: 1 1 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* seccion abaut*/
+
+/* Fondo claro para la sección */
+.stats.section.light-background {
+  background-color: #f0f4f8;
+  padding: 60px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Contenedor de cada estadística */
+.stats-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+  height: 100%;
+}
+
+/* Efecto hover suave */
+.stats-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Número animado */
+.stats-item .purecounter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1d448e;
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+/* Texto debajo del número */
+.stats-item p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Responsive: centrado y margen en móviles */
+@media (max-width: 767px) {
+  .stats-item {
+    margin-bottom: 25px;
+  }
+}
+
+
+.stats .purecounter {
+  color: #000 !important; /* Cambia a negro o cualquier color visible */
+  font-size: 2.5rem;
+  display: inline-block;
+  font-weight: bold;
+}
+
+
+.stats-item span.purecounter {
+  display: block;
+  text-align: center;
+}
+/*PARA LA SECCION DE VIDEO*/
+
+/* About Alt Section */
+.about-alt.section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Estilo para mantener imagen y texto en la misma fila */
+/* Removido display:flex manual - Bootstrap ya lo hace */
+.about-alt .row {
+  margin: 0;
+}
+.about-alt {
+  padding: 60px 0;
+}
+
+.about-alt h3 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.about-alt ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-alt ul li {
+  margin-bottom: 10px;
+}
+
+.about-alt ul li i {
+  color: #0d6efd;
+  margin-right: 8px;
+}
+
+
+
+/* Imagen con botón de reproducción */
+.about-alt .position-relative {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.about-alt .position-relative img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Botón de reproducción estilo pulsante */
+.pulsating-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: #ffc107;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  z-index: 2;
+  animation: pulse 1.5s infinite;
+}
+
+.pulsating-play-btn::before {
+  content: '';
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #000;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+/* Efecto de pulso */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,193,7, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 25px rgba(255,193,7, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255,193,7, 0);
+  }
+}
+
+/* Contenido textual */
+.about-alt .content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1d448e;
+}
+
+.about-alt .content p.fst-italic {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.about-alt .content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.about-alt .content ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.about-alt .content ul li i {
+  font-size: 1.2rem;
+  color: #28a745;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.about-alt .content p:last-of-type {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .about-alt .position-relative,
+  .about-alt .content {
+    text-align: center;
+  }
+
+  .pulsating-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-alt .content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/*PARA LA SECCION DE CLIENTES*/
+
+/* Clients Section - estilo general */
+.clients.section.light-background {
+  background-color: #f8f9fa; /* fondo claro */
+  padding: 60px 0;
+}
+
+/* Estilo individual de cada logo */
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.client-logo img {
+  max-height: 80px;
+  width: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover sobre logos */
+.client-logo:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 767px) {
+  .client-logo {
+    padding: 10px;
+  }
+
+  .client-logo img {
+    max-height: 60px;
+  }
+}
+

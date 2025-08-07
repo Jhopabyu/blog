@@ -1,0 +1,146 @@
+
+{% load static %}
+ 
+<section id="hero" class="hero section" style="background-image: url('{% static 'assets/img/hero-bg-abstract.jpg' %}');">
+  <div class="overlay"></div>
+  <div class="container position-relative z-2">
+    <div class="row justify-content-center" data-aos="zoom-out">
+      <div class="col-xl-7 col-lg-9 text-center text-white">
+        <h1>MINING & ENGINEERING CONSULTING SERVICES</h1>
+        <p>"Brindamos soluciones integrales en consultoría minera e ingeniería, apoyando proyectos desde la exploración hasta la producción, con enfoque en sostenibilidad, eficiencia y cumplimiento técnico."</p>
+      </div>
+    </div>
+    <div class="text-center mt-3" data-aos="zoom-out" data-aos-delay="100">
+      <!--<a href="#about" class="btn-get-started">Get Started</a>-->
+    </div>
+
+    <div class="row gy-4 mt-5">
+      <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+        <div class="icon-box">
+          <div class="icon"><i class="bi bi-easel"></i></div>
+          <h4 class="title"><a href="{% url 'servicios' %}">Servicios</a></h4>
+          <p class="description">Brindamos servicios especializados en análisis geológico y asistencia técnica para proyectos mineros de pequeña y gran escala.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="200">
+        <div class="icon-box">
+          <div class="icon"><i class="bi bi-gem"></i></div>
+          <h4 class="title"><a href="">Proyectos</a></h4>
+          <p class="description">Desarrollamos y gestionamos proyectos mineros enfocados en la exploración, extracción responsable y sostenibilidad ambiental.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="300">
+        <div class="icon-box">
+          <div class="icon"><i class="bi bi-geo-alt"></i></div>
+          <h4 class="title"><a href="">Contacto</a></h4>
+          <p class="description">Contáctanos para recibir asesoría personalizada y resolver cualquier consulta sobre nuestros servicios mineros.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="400">
+        <div class="icon-box">
+          <div class="icon"><i class="bi bi-megaphone"></i></div>
+          <h4 class="title"><a href="">Noticias</a></h4>
+          <p class="description">Mantente informado con las últimas noticias y avances del sector minero a nivel local e internacional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stats" class="stats section light-background">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 justify-content-center text-center">
+
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stats-item text-center w-100 h-100">
+          <i class="bi bi-people-fill" style="font-size: 2.5rem; color: #1d448e; margin-bottom: 8px;"></i>
+          <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter">0</span>
+          <p>Clientes</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stats-item text-center w-100 h-100">
+          <i class="bi bi-kanban-fill" style="font-size: 2.5rem; color: #1d448e; margin-bottom: 8px;"></i>
+          <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter">0</span>
+          <p>Proyectos</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stats-item text-center w-100 h-100">
+          <i class="bi bi-bounding-box" style="font-size: 2.5rem; color: #1d448e; margin-bottom: 8px;"></i>
+          <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter">0</span>
+          <p>Equipo</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Alt Section -->
+    <section id="about-alt" class="about-alt section">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <img src="{% static 'manage_post/img/fot_video.png' %}" class="img-fluid" alt="">
+        <a href="https://www.youtube.com/watch?v=7Mf-RyOigqs" class="glightbox pulsating-play-btn" aria-label="Play Video"></a>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+        <p class="fst-italic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <ul>
+          <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+          <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+          <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat...</span></li>
+        </ul>
+        <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /About Alt Section -->
+<!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="{% static 'manage_post/img/cliente1.jpg' %}" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+
+
+    

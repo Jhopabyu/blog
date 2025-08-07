@@ -31,6 +31,10 @@ class SignUpView(CreateView):
 class LoginView(LoginView):
     form_class = LoginForm
     template_name = 'login/login.html'
+    
+    def get_success_url(self):
+        return reverse_lazy('index')
+    
         
 class UserUpdateView(LoginRequiredMixin, TemplateView):
     #Retornar al login si no esta autenticado

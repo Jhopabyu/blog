@@ -39,7 +39,7 @@ body {
     height: 43px;
 }
 
-.nav .loguot,
+/*.nav .loguot,
 .login,
 .create,
 .btn-edit-profile,
@@ -52,7 +52,41 @@ body {
     letter-spacing: 2px;
     border-radius: 2px;
     background-color: #1d448e;
+}*/
+
+.nav .logout,
+.login,
+.create,
+.btn-edit-profile,
+.btn-edit-profile-2,
+.btn-admin {
+    color: #ffffff !important;
+    font-size: 0.8em !important;
+    text-transform: uppercase !important;
+    padding: 0.8em 1.2em !important;
+    letter-spacing: 1px !important;
+    border-radius: 5px !important;
+    background-color: #2c3e50 !important;
+    border: none !important;
+    transition: background-color 0.3s ease, transform 0.2s ease !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-weight: bold !important;
 }
+
+/* Hover effect */
+.nav .logout:hover,
+.login:hover,
+.create:hover,
+.btn-edit-profile:hover,
+.btn-edit-profile-2:hover,
+.btn-admin:hover {
+    background-color: #1abc9c !important;
+    transform: scale(1.05) !important;
+    color: #ffffff !important;
+}
+
 
 
 .login{
@@ -114,6 +148,5 @@ body {
         min-height: calc(100vh - 151px);
     }
 }
-
 
 

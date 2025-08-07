@@ -7,6 +7,8 @@
 <!-- Bloque css -->
 {% block css %}
 <link rel="stylesheet" href="{% static 'manage_post/categories/css/article_category.css' %}">
+<link rel="stylesheet" href="{% static 'manage_post/css/heder.css' %}">
+
 {% endblock css %}
 
 <!-- Bloque título -->
@@ -15,6 +17,7 @@
 <!-- Bloque contenido -->
 {% block content %}
 
+{% include 'manage_post/contenido_principal.html'%}
 <!-- Navbar category -->
 {% include 'manage_post/navbar_category.html' %}
 
@@ -46,3 +49,5 @@
     {% endfor %}
 </div>
 {% endblock content %}
+
+

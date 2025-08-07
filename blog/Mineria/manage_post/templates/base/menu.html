@@ -5,9 +5,11 @@
     <div class="menu">
         <!---->
         <div>
-            <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+              <i class="bi bi-list fs-1 text-dark"></i>
+              <span>MENU</span>
             </button>
+
         </div>
         <div class="logo">
             <!--Logo-->
@@ -42,9 +44,9 @@
                 {% endif %}
                 <!-- Botón de salir -->
                 <li>
-                    <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                    <form method="POST" action="{% url 'logout' %}" >
                     {% csrf_token %}
-                        <button type="submit" class="loguot" style="background: none; border: none; color: black; cursor: pointer; padding: 0;">
+                        <button type="submit" class="btn-admin" >
                             Salir
                         </button>
                     </form>
@@ -80,7 +82,7 @@
     <div class="w-50 pe-3 border-end">
       <ul class="nav flex-column">
         <li class="nav-item"><a class="nav-link text-white" href="#" onclick="mostrarSubmenu('equipo')">{{ _('Sobre Nosotros') }}</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#">{{ _('Servicios') }}</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="{% url 'servicios' %}">{{ _('Servicios') }}</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="#" onclick="mostrarSubmenu('que')">{{ _('Qué Hacemos') }}</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="#">{{ _('Contáctanos') }}</a></li>
       </ul>

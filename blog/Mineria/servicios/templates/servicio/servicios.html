@@ -1,0 +1,109 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}{{ _('Servicios') }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'servicio/css/style_servicios.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="text-center text-white py-5" style="background: linear-gradient(to bottom right, #6282a4ff, #2d3f5fff);">
+  <div class="container">
+    <h2 class="display-5 fw-bold mb-3">Servicios profesionales</h2>
+    <p class="lead mb-4">
+      Somos una agencia digital confiable y asequible y una red de talentos. Canalizamos la creatividad,
+      los colores, el copy y el código para ayudar a nuestros clientes con una mejor marca.
+    </p>
+    <p><small>Imagen de <a href="https://www.freepik.com" class="text-decoration-underline text-white">Freepik</a></small></p>
+
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow servicio-card" data-servicio="GEOLOGÍA Y EVALUACION DE RECURSOS">
+          <div class="card-body">
+            <div class="mb-3">
+              <i class="bi bi-bank2 fs-1 text-primary"></i>
+            </div>
+            <h5 class="card-title">GEOLOGÍA Y EVALUACION DE RECURSOS</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow servicio-card" data-servicio="INGENIERÍA DE MINAS">
+          <div class="card-body">
+            <div class="mb-3">
+              <i class="bi bi-award fs-1 text-primary"></i>
+            </div>
+            <h5 class="card-title">INGENIERÍA DE MINAS</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center  border-0 shadow servicio-card" data-servicio="DISEÑO">
+          <div class="card-body">
+            <div class="mb-3">
+              <i class="bi bi-palette fs-1 text-primary"></i>
+            </div>
+            <h5 class="card-title">PLANTAS DE PROCESAMIENTO Y METALURGIA</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow servicio-card" data-servicio="CREATIVIDAD">
+          <div class="card-body">
+            <div class="mb-3">
+              <i class="bi bi-send fs-1 text-primary"></i>
+            </div>
+            <h5 class="card-title">PLANTAS DE PROCESAMIENTO Y METALURGIA</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow servicio-card" data-servicio="INGENIERÍA DE MINAS">
+          <div class="card-body">
+            <div class="mb-3">
+              <i class="bi bi-award fs-1 text-primary"></i>
+            </div>
+            <h5 class="card-title">GESTION DE PROYECTOS Y/O CONCESIONES MINERAS</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="" class="btn btn-primary btn-lg">Contáctenos</a>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="servicioModal" tabindex="-1" aria-labelledby="servicioModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-animate">
+    <div class="modal-content rounded-4 shadow-lg border-0">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="servicioModalLabel">
+          <i class="bi bi-stars me-2"></i>Detalle del Servicio</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body p-4 d-flex align-items-start gap-4">
+        <div>
+        <i class="bi bi-laptop fs-1 text-primary"></i>
+          <!-- o imagen -->
+          <!-- <img src="ruta/servicio.jpg" alt="Servicio" class="img-fluid rounded" width="80"> -->
+        </div>
+        <div>
+        <!-- Aquí se cargará el contenido dinámico -->
+        <div id="modal-description" ></div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="{% static 'js/servicios.js' %}"></script>
+{% endblock %}
